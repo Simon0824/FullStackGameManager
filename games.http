@@ -1,0 +1,15 @@
+###
+GET http://localhost:5153/games
+
+###
+GET http://localhost:5153/games/1
+
+###
+POST http://localhost:5153/games
+Content-Type: application/json
+
+{
+    "title": "The Legend of Zelda: Breath of the Wild2",
+    "genre": "Action-adventure",
+    "releaseDate": "2017-03-03"
+}
