@@ -13,3 +13,6 @@ Content-Type: application/json
     "genre": "Action-adventure",
     "releaseDate": "2017-03-03"
 }
+
+###
+DELETE http://localhost:5153/games/1
