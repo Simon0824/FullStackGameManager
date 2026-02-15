@@ -6,5 +6,5 @@ namespace RestApiLearning.Data;
 
 public class RestApiContext(DbContextOptions<RestApiContext> options) : DbContext(options)
 {
-    public DbSet<Game> Game => Set<Game>();
+        public DbSet<Game> Game => Set<Game>();
 }

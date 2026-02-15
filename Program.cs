@@ -8,7 +8,8 @@ builder.Services.AddSqlite<RestApiContext>(ConnectionString);
 
 var app = builder.Build();
 
-
 app.MapGetEndpoints();
+
+app.MigrationDb();
 
 app.Run();
