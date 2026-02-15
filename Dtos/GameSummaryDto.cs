@@ -2,9 +2,13 @@ using System;
 
 namespace RestApiLearning.Dtos;
 
-public record class CreateGameDto(
+public record class GameSummaryDto
+(
     int Id,
     string Title,
     string Genre,
     DateOnly ReleaseDate
 );
+
+
+
