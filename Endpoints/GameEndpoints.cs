@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 using RestApiLearning.Data;
 using RestApiLearning.Dtos;
@@ -62,7 +63,6 @@ public static class GameEndpoints
 
         dbContext.Game.Remove(game);
         dbContext.SaveChanges();
-
         return Results.NoContent();
       });
     }

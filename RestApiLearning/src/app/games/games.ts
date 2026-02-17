@@ -20,13 +20,14 @@ export class Games implements OnInit {
 
   
   loadGames() {
-    console.log('Ładuję gry...');
+    console.log('Loading games...');
     this.gameService.getGames().subscribe(data => {
       this.games = data;
     });
   }
 
   delete(id: number) {
+    console.log(`Deleting game with id: ${id}`);
     this.gameService.deleteGame(id).subscribe(() => {
       this.loadGames();
     });

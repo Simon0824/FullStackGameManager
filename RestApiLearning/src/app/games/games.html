@@ -1,8 +1,12 @@
-<button (click)="loadGames()">Odśwież</button>
-
-<ul>
-  <li *ngFor="let g of games">
+<div class="row justify-content-center">
+  <div class="card p-1 m-1">
+    <ul class="list-group">
+  <li class="list-group-item" *ngFor="let g of games">
     {{ g.title }} ({{ g.genre }}) - {{ g.releaseDate }}
-    <button (click)="delete(g.id)">Usuń</button>
+    <button class="btn btn-danger m-1" (click)="delete(g.id)">Delete</button>
   </li>
 </ul>
+  </div>
+  <button class="btn btn-primary col-2" (click)="loadGames()">Refresh</button>
+</div>
+
