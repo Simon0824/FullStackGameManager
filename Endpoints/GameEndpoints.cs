@@ -17,7 +17,6 @@ public static class GameEndpoints
       {
         Game game = new()
         {
-          Id = dbContext.Game.Count() + 1,
           Title = cGame.Title,
           Genre = cGame.Genre,
           ReleaseDate = cGame.ReleaseDate
