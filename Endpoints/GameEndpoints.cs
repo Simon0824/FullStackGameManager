@@ -19,6 +19,7 @@ public static class GameEndpoints
         {
           Title = cGame.Title,
           Genre = cGame.Genre,
+          Price = cGame.Price,
           ReleaseDate = cGame.ReleaseDate
         };
 
@@ -34,6 +35,7 @@ public static class GameEndpoints
           g.Id,
           g.Title,
           g.Genre,
+          g.Price,
           g.ReleaseDate
         )).ToList();
 
@@ -50,6 +52,7 @@ public static class GameEndpoints
 
         game.Title = cGame.Title;
         game.Genre = cGame.Genre;
+        game.Price = cGame.Price;
         game.ReleaseDate = cGame.ReleaseDate;
 
         dbContext.SaveChanges();

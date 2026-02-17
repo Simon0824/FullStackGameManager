@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApiLearning.Data;
 
@@ -10,9 +11,11 @@ using RestApiLearning.Data;
 namespace RestApiLearning.Data.Migrations
 {
     [DbContext(typeof(RestApiContext))]
-    partial class RestApiContextModelSnapshot : ModelSnapshot
+    [Migration("20260217200906_UpdateModel")]
+    partial class UpdateModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.3");

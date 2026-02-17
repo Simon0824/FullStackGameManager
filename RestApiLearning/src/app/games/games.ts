@@ -16,6 +16,7 @@ export class Games implements OnInit {
   newGame: GameDto = {
   title: '',
   genre: '',
+  price: 0,
   releaseDate: ''
   }
   games: Game[] = [];
@@ -46,6 +47,7 @@ export class Games implements OnInit {
       this.newGame = {
         title: '',
         genre: '',
+        price: 0,
         releaseDate: ''
       };
    });
