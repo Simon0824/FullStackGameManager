@@ -1,0 +1,8 @@
+<button (click)="loadGames()">Odśwież</button>
+
+<ul>
+  <li *ngFor="let g of games">
+    {{ g.title }} ({{ g.genre }}) - {{ g.releaseDate }}
+    <button (click)="delete(g.id)">Usuń</button>
+  </li>
+</ul>

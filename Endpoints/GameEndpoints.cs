@@ -29,14 +29,14 @@ public static class GameEndpoints
 
       app.MapGet("/games", (RestApiContext dbContext) =>
       {
-        dbContext.Game.Select(g => new GameSummaryDto(
+        var games = dbContext.Game.Select(g => new GameSummaryDto(
           g.Id,
           g.Title,
           g.Genre,
           g.ReleaseDate
         )).ToList();
 
-        return Results.Ok(dbContext.Game);
+        return Results.Ok(games);
       });
 
       app.MapPut("/games/{id}", (int id, GameDto cGame, RestApiContext dbContext) =>

@@ -144,3 +144,12 @@ C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\runtimes\win-
 C:\Users\Szymon\Desktop\projects\RestApiLearning\obj\Debug\net10.0\RestApiLearning.csproj.AssemblyReference.cache
 C:\Users\Szymon\Desktop\projects\RestApiLearning\obj\Debug\net10.0\RestApiL.266C36D9.Up2Date
 C:\Users\Szymon\Desktop\projects\RestApiLearning\obj\Debug\net10.0\RestApiLearning.sourcelink.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\package-lock.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\package.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\angular.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\package-lock.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\package.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\src\app\proxy.conf.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\tsconfig.app.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\tsconfig.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\tsconfig.spec.json
