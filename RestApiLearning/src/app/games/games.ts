@@ -38,8 +38,8 @@ export class Games implements OnInit {
       this.loadGames();
     });
   }
-  addGame()
-  {
+
+  addGame(){
     console.log('Adding game:', this.newGame);
     this.gameService.addGame(this.newGame).subscribe(() => {
       this.loadGames();
@@ -49,6 +49,6 @@ export class Games implements OnInit {
         releaseDate: ''
       };
    });
-}
+  }
 }
 

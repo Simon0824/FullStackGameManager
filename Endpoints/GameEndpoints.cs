@@ -59,8 +59,14 @@ public static class GameEndpoints
       app.MapDelete("/games/{id}", (int id, RestApiContext dbContext) =>
       {
         var game = dbContext.Game.Find(id);
-
-        dbContext.Game.Remove(game);
+        if (game is not null)
+        {
+          dbContext.Game.Remove(game);
+        }
+        else
+        {
+          return Results.NotFound();
+        }
         dbContext.SaveChanges();
         return Results.NoContent();
       });
