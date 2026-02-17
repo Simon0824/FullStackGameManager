@@ -4,15 +4,27 @@
     <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="newGame.title"/>
     <input type="text" class="form-control" placeholder="Genre" name="genre" [(ngModel)]="newGame.genre"/>
     <input type="date" class="form-control" name="date" [(ngModel)]="newGame.releaseDate"/>
-    <button class="btn btn-success m-1" (click)="addGame()">Add</button>
+    <button class="btn btn-success m-1" (click)="add()">Add</button>
   </div>
   <div class="card-body">
-  <ul class="list-group">
-   <li class="list-group-item" *ngFor="let g of games">
-    {{ g.title }} ({{ g.genre }}) - {{ g.releaseDate }}
-    <button class="btn btn-danger m-1" (click)="delete(g.id)">Delete</button>
-   </li>
-  </ul>
+  <table class="table table-bordered">
+  <thead class="table table-bordered table-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Release Date</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of games">
+      <td>{{game.title}}</td>
+      <td>{{game.genre}}</td>
+      <td>{{game.releaseDate | date:'yyyy-MM-dd'}}</td>
+      <td><button class="btn btn-danger" (click)="delete(game.id)">Delete</button></td>
+    </tr>
+  <tbody>
+</table>
   </div>
   </div>
   <button class="btn btn-primary col-3" (click)="loadGames()">Refresh</button>

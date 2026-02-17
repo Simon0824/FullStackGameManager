@@ -39,7 +39,7 @@ export class Games implements OnInit {
     });
   }
 
-  addGame(){
+  add(){
     console.log('Adding game:', this.newGame);
     this.gameService.addGame(this.newGame).subscribe(() => {
       this.loadGames();
