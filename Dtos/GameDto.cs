@@ -1,9 +1,10 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RestApiLearning.Dtos;
 
 public record class GameDto(
-    string Title,
-    string Genre,
-    DateOnly ReleaseDate
+    [Required] [StringLength(30)]string Title,
+    [Required] string Genre,
+    [Required]DateOnly ReleaseDate
 );

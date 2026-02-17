@@ -18,7 +18,6 @@ var app = builder.Build();
 
 app.UseCors("angular");
 
-
 app.MigrationDb();
 
 app.MapGetEndpoints();
