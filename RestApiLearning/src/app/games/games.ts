@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 export class Games implements OnInit {
 
   isUpdateMode: boolean = false;
-
   updateGame: GameUpdateDto = {
   title: '',
   genre: '',
@@ -34,8 +33,13 @@ export class Games implements OnInit {
     this.loadGames();
   }
 
-  isUpdateModeEnabled(){
+  isUpdateModeEnabled(id: number){
     this.isUpdateMode = true;
+    this.updateGame.id = id;
+    this.updateGame.title = this.games.find(g => g.id === id)?.title || '';
+    this.updateGame.genre = this.games.find(g => g.id === id)?.genre || '';
+    this.updateGame.price = this.games.find(g => g.id === id)?.price || 0;
+    this.updateGame.releaseDate = this.games.find(g => g.id === id)?.releaseDate || '';
   }
 
   loadGames() {
@@ -73,7 +77,7 @@ export class Games implements OnInit {
         title: '',
         genre: '',
         price: 0,
-        id: 0,
+        id: id,
         releaseDate: ''
       };
       this.isUpdateMode = false;
