@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { GameDto, Game } from '../models/game';
+import { GameDto, Game, GameUpdateDto } from '../models/game';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,7 @@ export class GameService {
     return this.http.post<Game>(this.apiUrl, game);
   }
 
-  updateGame(id: number, game: GameDto): Observable<Game> {
+  updateGame(id: number, game: GameUpdateDto): Observable<Game> {
     return this.http.put<Game>(`${this.apiUrl}/${id}`, game);
   }
 

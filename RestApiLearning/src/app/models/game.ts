@@ -12,3 +12,11 @@ export interface GameDto {
   price: number;
   releaseDate: string;
 }
+
+export interface GameUpdateDto {
+  title: string;
+  genre: string;
+  price: number;
+  id: number;
+  releaseDate: string;
+}

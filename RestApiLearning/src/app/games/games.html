@@ -1,11 +1,18 @@
 <div class="row justify-content-center">
   <div class="card p-1 m-1">
     <div class="card-header">
-    <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="newGame.title"/>
-    <input type="text" class="form-control" placeholder="Genre" name="genre" [(ngModel)]="newGame.genre"/>
-    <input type="number" class="form-control" placeholder="Price" name="price" [(ngModel)]="newGame.price"/>
-    <input type="date" class="form-control" name="date" [(ngModel)]="newGame.releaseDate"/>
-    <button class="btn btn-success m-1" (click)="add()">Add</button>
+    <input *ngIf="!isUpdateMode" type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="newGame.title"/>
+    <input *ngIf="!isUpdateMode" type="text" class="form-control" placeholder="Genre" name="genre" [(ngModel)]="newGame.genre"/>
+    <input *ngIf="!isUpdateMode" type="number" class="form-control" placeholder="Price" name="price" [(ngModel)]="newGame.price"/>
+    <input *ngIf="!isUpdateMode" type="date" class="form-control" name="date" [(ngModel)]="newGame.releaseDate"/>
+    <input *ngIf="isUpdateMode" type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="updateGame.title"/>
+    <input *ngIf="isUpdateMode" type="text" class="form-control" placeholder="Genre" name="genre" [(ngModel)]="updateGame.genre"/>
+    <input *ngIf="isUpdateMode" type="number" class="form-control" placeholder="Price" name="price" [(ngModel)]="updateGame.price"/>
+    <input *ngIf="isUpdateMode" type="number" class="form-control" placeholder="Id" name="id" [(ngModel)]="updateGame.id"/>
+    <input *ngIf="isUpdateMode" type="date" class="form-control" name="date" [(ngModel)]="updateGame.releaseDate"/>
+    <button *ngIf="!isUpdateMode" class="btn btn-success m-1" (click)="add()">Add</button>
+    <button *ngIf="isUpdateMode" class="btn btn-warning m-1" (click)="update(updateGame.id, updateGame)">Update</button>
+    <button *ngIf="isUpdateMode" class="btn btn-secondary m-1" (click)="isUpdateMode = false">Cancel</button>
   </div>
     <div class="card-body">
       <table class="table table-bordered">
@@ -26,7 +33,9 @@
             <td>{{game.genre}}</td>
             <td>${{game.price}}</td>
             <td>{{game.releaseDate | date:'yyyy-MM-dd'}}</td>
-            <td><button class="btn btn-danger" (click)="delete(game.id)">Delete</button></td>
+            <td><button class="btn btn-danger ms-4" (click)="delete(game.id)">Delete</button>
+                <button class="btn btn-warning ms-2" (click)="isUpdateModeEnabled()">Update</button>
+            </td>
           </tr>
         <tbody>
       </table>

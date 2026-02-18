@@ -1,9 +1,8 @@
 import { NgFor } from '@angular/common';
-import { NgForm } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/game';
-import { Game, GameDto } from '../models/game';
+import { Game, GameDto, GameUpdateDto } from '../models/game';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-games',
@@ -12,6 +11,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './games.css',
 })
 export class Games implements OnInit {
+
+  isUpdateMode: boolean = false;
+
+  updateGame: GameUpdateDto = {
+  title: '',
+  genre: '',
+  price: 0,
+  id: 0,
+  releaseDate: ''
+  };
 
   newGame: GameDto = {
   title: '',
@@ -25,7 +34,10 @@ export class Games implements OnInit {
     this.loadGames();
   }
 
-  
+  isUpdateModeEnabled(){
+    this.isUpdateMode = true;
+  }
+
   loadGames() {
     console.log('Loading games...');
     this.gameService.getGames().subscribe(data => {
@@ -51,6 +63,21 @@ export class Games implements OnInit {
         releaseDate: ''
       };
    });
+  }
+
+  update(id: number, game: GameUpdateDto) {
+    console.log(`Updating game with id: ${id}`, game);
+    this.gameService.updateGame(id, game).subscribe(() => {
+      this.loadGames();
+      this.updateGame = {
+        title: '',
+        genre: '',
+        price: 0,
+        id: 0,
+        releaseDate: ''
+      };
+      this.isUpdateMode = false;
+    });
   }
 }
 
