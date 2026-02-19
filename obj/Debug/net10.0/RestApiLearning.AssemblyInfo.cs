@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RestApiLearning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d77830176dfd7b3e6fd7f8443f210c4660d31b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+245dd04df6ddbc2751163da689636460b25caa75")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestApiLearning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestApiLearning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

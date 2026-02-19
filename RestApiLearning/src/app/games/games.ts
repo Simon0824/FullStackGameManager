@@ -27,7 +27,9 @@ export class Games implements OnInit {
   price: 0,
   releaseDate: ''
   }
+  
   games: Game[] = [];
+
   constructor(private gameService: GameService) {}
   ngOnInit(): void {
     this.loadGames();

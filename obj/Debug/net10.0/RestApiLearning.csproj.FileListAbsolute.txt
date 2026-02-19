@@ -153,3 +153,8 @@ C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearni
 C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\tsconfig.app.json
 C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\tsconfig.json
 C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\RestApiLearning\tsconfig.spec.json
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Szymon\Desktop\projects\RestApiLearning\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Szymon\Desktop\projects\RestApiLearning\obj\Debug\net10.0\RestApiLearning.MvcApplicationPartsAssemblyInfo.cs
