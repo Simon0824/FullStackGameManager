@@ -4,6 +4,7 @@ using RestApiLearning.Endpoints;
 using Microsoft.OpenApi;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddValidation();
+builder.AddGameDb();
 var ConnectionString = "Data Source=RestApi.db";
 builder.Services.AddSqlite<RestApiContext>(ConnectionString);
 
