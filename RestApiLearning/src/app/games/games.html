@@ -10,6 +10,7 @@
     <input *ngIf="isUpdateMode" type="number" class="form-control m-1" value={{updateGame.price}}  name="price" [(ngModel)]="updateGame.price"/>
     <input *ngIf="isUpdateMode" type="date" class="form-control m-1" value={{updateGame.releaseDate}} name="date" [(ngModel)]="updateGame.releaseDate"/>
     <button *ngIf="!isUpdateMode" class="btn btn-success m-1" (click)="add()">Add</button>
+    <span *ngIf="isErrorMode" class="m-2 text-danger">Game is already in db!</span>
     <button *ngIf="isUpdateMode" class="btn btn-warning m-1" (click)="update(updateGame.id, updateGame)">Update</button>
     <button *ngIf="isUpdateMode" class="btn btn-secondary m-1" (click)="isUpdateMode = false">Cancel</button>
   </div>

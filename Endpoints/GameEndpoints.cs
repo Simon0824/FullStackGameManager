@@ -22,7 +22,13 @@ public static class GameEndpoints
           Price = cGame.Price,
           ReleaseDate = cGame.ReleaseDate
         };
-
+        foreach(var gamee in dbContext.Game)
+        {
+          if(cGame.Title == gamee.Title && cGame.Genre == game.Genre && cGame.Price == gamee.Price && cGame.ReleaseDate == gamee.ReleaseDate)
+          {
+            return Results.BadRequest("Game is already in db!");
+          }
+        }
         dbContext.Game.Add(game);
         dbContext.SaveChanges();
         

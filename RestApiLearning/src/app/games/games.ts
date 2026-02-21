@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/game';
 import { Game, GameDto, GameUpdateDto } from '../models/game';
 import { CommonModule } from '@angular/common';
+import { reportUnhandledError } from 'rxjs/internal/util/reportUnhandledError';
 @Component({
   selector: 'app-games',
   imports: [ CommonModule, NgFor, FormsModule],
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class Games implements OnInit {
 
   isUpdateMode: boolean = false;
+  isErrorMode: boolean = false;
   updateGame: GameUpdateDto = {
   title: '',
   genre: '',
@@ -60,6 +62,13 @@ export class Games implements OnInit {
 
   add(){
     console.log('Adding game:', this.newGame);
+    this.games.forEach((gamee) => {
+      if(this.newGame.title == gamee.title && this.newGame.genre == gamee.genre && this.newGame.price == gamee.price && this.newGame.releaseDate == gamee.releaseDate)
+      {
+        this.isErrorMode = true;
+        return;
+      }
+    })
     this.gameService.addGame(this.newGame).subscribe(() => {
       this.loadGames();
       this.newGame = {
