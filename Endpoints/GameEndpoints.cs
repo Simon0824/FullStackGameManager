@@ -9,11 +9,11 @@ namespace RestApiLearning.Endpoints;
 
 public static class GameEndpoints
 {
-
     public static void MapGetEndpoints(this WebApplication app)
     {
-
-      app.MapPost("/games", (GameDto cGame, RestApiContext dbContext) =>
+      var GamesGroup =  app.MapGroup("/games");
+      
+      GamesGroup.MapPost("/", (GameDto cGame, RestApiContext dbContext) =>
       {
         Game game = new()
         {
@@ -32,10 +32,10 @@ public static class GameEndpoints
         dbContext.Game.Add(game);
         dbContext.SaveChanges();
         
-        return Results.Created($"/games/{game.Id}", game);
+        return Results.Created($"/{game.Id}", game);
       });
 
-      app.MapGet("/games", (RestApiContext dbContext) =>
+      GamesGroup.MapGet("/", (RestApiContext dbContext) =>
       {
         var games = dbContext.Game.Select(g => new GameSummaryDto(
           g.Id,
@@ -48,7 +48,7 @@ public static class GameEndpoints
         return Results.Ok(games);
       });
 
-      app.MapPut("/games/{id}", (int id, GameDto cGame, RestApiContext dbContext) =>
+      GamesGroup.MapPut("/{id}", (int id, GameDto cGame, RestApiContext dbContext) =>
       {
         var game = dbContext.Game.Find(id);
         if (game is null)
@@ -65,7 +65,7 @@ public static class GameEndpoints
         return Results.Ok(game);
       });
 
-      app.MapDelete("/games/{id}", (int id, RestApiContext dbContext) =>
+      GamesGroup.MapDelete("/{id}", (int id, RestApiContext dbContext) =>
       {
         var game = dbContext.Game.Find(id);
         if (game is not null)
