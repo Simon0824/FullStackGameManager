@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Games } from "./games/games";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-root',
   imports: [Games, CommonModule, FormsModule],
@@ -11,4 +12,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class App {
   protected readonly title = signal('RestApiLearning');
+
+  DarkMode: boolean = false;
+
+  DarkModeOn()
+  {
+    this.DarkMode = !this.DarkMode;
+  }
 }

@@ -1,7 +1,17 @@
-<div class="bg-dark p-3 mb-2">
-    <h2 class="text-white">RestApiLearning</h2>
+<body  style="background-size: cover; height: 100vh;" class="{{ DarkMode ? 'bg-dark text-white' : 'bg-white text-black' }}">
+<nav class="{{ DarkMode ? 'bg-black text-white' : 'bg-dark text-white'}} navbar p-3 mb-2 form-switch">
+    <span style="font-size: 30px;">RestApiLearning</span>
+    <input
+    style="font-size: 20px; cursor: pointer;"
+    type="checkbox"
+    class="form-check-input"
+    role="switch"
+    id="DarkModeSwitch"
+    (change)="DarkModeOn()"
+    />
+</nav>
+<div>
+    <app-games [bootstrapClass]="[DarkMode ? 'bg-dark' : 'bg-white']" class="d-flex justify-content-center"></app-games>
 </div>
-<div class="container">
-    <app-games class="d-flex justify-content-center"></app-games>
-</div>
+</body>
 

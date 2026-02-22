@@ -5,6 +5,8 @@ import { GameService } from '../services/game';
 import { Game, GameDto, GameUpdateDto } from '../models/game';
 import { CommonModule } from '@angular/common';
 import { reportUnhandledError } from 'rxjs/internal/util/reportUnhandledError';
+import { App } from '../app';
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-games',
   imports: [ CommonModule, NgFor, FormsModule],
@@ -13,6 +15,7 @@ import { reportUnhandledError } from 'rxjs/internal/util/reportUnhandledError';
 })
 export class Games implements OnInit {
 
+  @Input() bootstrapClass: string[] = ['bg-black'];
   isUpdateMode: boolean = false;
   isErrorMode: boolean = false;
   updateGame: GameUpdateDto = {
