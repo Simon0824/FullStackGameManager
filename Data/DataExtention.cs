@@ -1,7 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using RestApiLearning.Models;
-
+using RestApiLearning.Data;
 namespace RestApiLearning.Data;
 
 public static class DataExtention

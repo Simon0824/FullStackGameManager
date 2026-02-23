@@ -3,11 +3,11 @@
     <div class="card-header">
     <input *ngIf="!isUpdateMode" type="text" class="form-control m-1" placeholder="Title" name="title" [(ngModel)]="newGame.title"/>
     <input *ngIf="!isUpdateMode" type="text" class="form-control m-1" placeholder="Genre" name="genre" [(ngModel)]="newGame.genre"/>
-    <input *ngIf="!isUpdateMode" type="number" class="form-control m-1" placeholder="Price" name="price" [(ngModel)]="newGame.price"/>
+    <input *ngIf="!isUpdateMode" type="number" min="1" value="1" class="form-control m-1" name="price" [(ngModel)]="newGame.price"/>
     <input *ngIf="!isUpdateMode" type="date" class="form-control m-1" name="date" [(ngModel)]="newGame.releaseDate"/>
     <input *ngIf="isUpdateMode" type="text" class="form-control m-1" value={{updateGame.title}} name="title" [(ngModel)]="updateGame.title">
     <input *ngIf="isUpdateMode" type="text" class="form-control m-1" value={{updateGame.genre}}  name="genre" [(ngModel)]="updateGame.genre"/>
-    <input *ngIf="isUpdateMode" type="number" class="form-control m-1" value={{updateGame.price}}  name="price" [(ngModel)]="updateGame.price"/>
+    <input *ngIf="isUpdateMode" type="number" min="1" class="form-control m-1" value={{updateGame.price}}  name="price" [(ngModel)]="updateGame.price"/>
     <input *ngIf="isUpdateMode" type="date" class="form-control m-1" value={{updateGame.releaseDate}} name="date" [(ngModel)]="updateGame.releaseDate"/>
     <button *ngIf="!isUpdateMode" class="btn btn-success m-1" (click)="add()">Add</button>
     <span *ngIf="isErrorMode" class="m-2 text-danger">Game is already in db!</span>
