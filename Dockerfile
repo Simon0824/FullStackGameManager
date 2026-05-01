@@ -2,8 +2,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-COPY *.csproj ./
-RUN dotnet restore
+COPY ["RestApiLearning/RestApiLearning.csproj", "./"]
+
+RUN dotnet restore "RestApiLearning/RestApiLearning.csproj"
 
 COPY . ./
 RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
