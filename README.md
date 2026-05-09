@@ -9,9 +9,11 @@ Backend is coded in C# containing a SQLite database with a frontend integration 
 
 Used for SQLite management, handling DbContext migrations and communicating with database.
 
+
 **Minimal API**
 
 Light-weight modern API Framework used for more readable, minimalistic and clean code.
+
 
 **Swager UI**
 
@@ -19,5 +21,6 @@ Light-weight modern API Framework used for more readable, minimalistic and clean
 **Angular**
 
 Frontend created in angular for modern responsive and interactive user interface with bootstrap.
+
 
 **Bootstrap 5**
