@@ -18,6 +18,7 @@ export class Games implements OnInit {
   @Input() bootstrapClass: string[] = ['bg-black'];
   isUpdateMode: boolean = false;
   isErrorMode: boolean = false;
+  games: Game[] = [];
   updateGame: GameUpdateDto = {
   title: '',
   genre: '',
@@ -33,7 +34,6 @@ export class Games implements OnInit {
   releaseDate: ''
   }
   
-  games: Game[] = [];
 
   constructor(private gameService: GameService) {}
   ngOnInit(): void {

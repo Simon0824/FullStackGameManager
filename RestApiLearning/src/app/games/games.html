@@ -27,8 +27,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let game of games">
-            <td>{{game.id}}</td>
+          <tr *ngFor="let game of games; let i = index">
+            <td>{{i+1}}</td>
             <td>{{game.title}}</td>
             <td>{{game.genre}}</td>
             <td>${{game.price}}</td>
