@@ -5,22 +5,41 @@ Backend is coded in C# containing a SQLite database with a frontend integration 
 ## Used technologies and frameworks
 
 ### Backend (.NET 10)
-**Entity Framework Core(EF Core)**
-
-Used for SQLite management, handling DbContext migrations and communicating with database.
-
+**Entity Framework Core (EF Core)**
+Used for SQLite management, handling DbContext migrations and communicating with the database.
 
 **Minimal API**
+Lightweight modern API framework used for more readable, minimalistic and clean code.
 
-Light-weight modern API Framework used for more readable, minimalistic and clean code.
 
-
-**Swager UI**
+**Swagger UI**
 
 ### Frontend
 **Angular**
-
-Frontend created in angular for modern responsive and interactive user interface with bootstrap.
+Frontend created in Angular for modern responsive and interactive user interface with bootstrap.
 
 
 **Bootstrap 5**
+
+## API Preview
+
+### Data seeding (FirstGame)
+The first game record is seeded directly into the database from the application code.
+
+<img src="https://github.com/Simon0824/FullStackGameManager/blob/5701a2acfc5742e2e75532447a0e0a0903c64b4d/Assets/Screenshots/Scr1.png" width="1200" height="1000">
+
+### POST Endpoint
+Form with input fields that allow adding a game to the database.
+
+<img src="https://github.com/Simon0824/FullStackGameManager/blob/5701a2acfc5742e2e75532447a0e0a0903c64b4d/Assets/Screenshots/Scr2.png" width="1200" height="1000">
+
+### PUT Endpoint
+Form with input fields used to update data for a selected game.
+
+<img src="https://github.com/Simon0824/FullStackGameManager/blob/5701a2acfc5742e2e75532447a0e0a0903c64b4d/Assets/Screenshots/Scr3.png" width="1200" height="1000">
+
+### Dark Mode
+Switch used to enable dark mode.
+
+<img src="https://github.com/Simon0824/FullStackGameManager/blob/5701a2acfc5742e2e75532447a0e0a0903c64b4d/Assets/Screenshots/Scr4.png" width="1200" height="1000">
+
