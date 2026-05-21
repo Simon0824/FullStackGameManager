@@ -51,3 +51,5 @@ ehthumbs.db
 *.tmp
 *.bak
 *.cache
+
+node_modules/
