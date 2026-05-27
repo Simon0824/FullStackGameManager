@@ -1,7 +1,4 @@
-using System;
-
-namespace RestApiLearning.Dtos;
-
+namespace FullStackGameManager.Dtos;
 public record class GameSummaryDto
 (
     int Id,

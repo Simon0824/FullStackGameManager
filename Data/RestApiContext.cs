@@ -1,8 +1,7 @@
-using System;
 using Microsoft.EntityFrameworkCore;
-using RestApiLearning.Models;
+using FullStackGameManager.Models;
 
-namespace RestApiLearning.Data;
+namespace FullStackGameManager.Data;
 
 public class RestApiContext(DbContextOptions<RestApiContext> options) : DbContext(options)
 {

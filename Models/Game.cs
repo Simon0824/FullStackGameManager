@@ -1,7 +1,4 @@
-using System;
-
-namespace RestApiLearning.Models;
-
+namespace FullStackGameManager.Models;
 public class Game
 {
     public int Id { get; set; }

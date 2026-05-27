@@ -1,11 +1,9 @@
-using System;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
-using RestApiLearning.Data;
-using RestApiLearning.Dtos;
-using RestApiLearning.Models;
+using FullStackGameManager.Data;
+using FullStackGameManager.Dtos;
+using FullStackGameManager.Models;
 
-namespace RestApiLearning.Endpoints;
+namespace FullStackGameManager.Endpoints;
 
 public static class GameEndpoints
 {
@@ -22,12 +20,15 @@ public static class GameEndpoints
           Price = cGame.Price,
           ReleaseDate = cGame.ReleaseDate
         };
-        foreach(var gamee in dbContext.Game)
+        bool gameExist = await dbContext.Game.AnyAsync(g =>
+          g.Title == cGame.Title &&
+          g.Genre == cGame.Genre &&
+          g.Price == cGame.Price &&
+          g.ReleaseDate == cGame.ReleaseDate
+        );
+        if(gameExist)
         {
-          if(cGame.Title == gamee.Title && cGame.Genre == game.Genre && cGame.Price == gamee.Price && cGame.ReleaseDate == gamee.ReleaseDate)
-          {
-            return Results.BadRequest("Game is already in db!");
-          }
+          return Results.BadRequest("Game is already in db!");
         }
         dbContext.Game.Add(game);
         await dbContext.SaveChangesAsync();

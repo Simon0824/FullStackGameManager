@@ -1,7 +1,5 @@
-using RestApiLearning.Data;
-using RestApiLearning.Dtos;
-using RestApiLearning.Endpoints;
-using Microsoft.OpenApi;
+using FullStackGameManager.Data;
+using FullStackGameManager.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddValidation();
 builder.AddGameDb();
@@ -27,10 +25,13 @@ app.UseSwagger();
 
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
-
 app.MigrationDb();
 
 app.MapGetEndpoints();
+
+if(!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.Run();

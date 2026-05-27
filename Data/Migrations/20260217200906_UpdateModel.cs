@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace RestApiLearning.Data.Migrations
+namespace FullStackGameManager.Data.Migrations
 {
     /// <inheritdoc />
     public partial class UpdateModel : Migration

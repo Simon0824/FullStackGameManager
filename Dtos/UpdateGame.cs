@@ -1,6 +1,5 @@
-using System;
 using System.ComponentModel.DataAnnotations;
-namespace RestApiLearning.Dtos;
+namespace FullStackGameManager.Dtos;
 
 public record class UpdateGame(
     int Id,

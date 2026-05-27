@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RestApiLearning.Data;
+using FullStackGameManager.Data;
 
 #nullable disable
 
-namespace RestApiLearning.Data.Migrations
+namespace FullStackGameManager.Data.Migrations
 {
     [DbContext(typeof(RestApiContext))]
     [Migration("20260217200906_UpdateModel")]

@@ -3,11 +3,11 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RestApiLearning.Data;
+using FullStackGameManager.Data;
 
 #nullable disable
 
-namespace RestApiLearning.Data.Migrations
+namespace FullStackGameManager.Data.Migrations
 {
     [DbContext(typeof(RestApiContext))]
     partial class RestApiContextModelSnapshot : ModelSnapshot
